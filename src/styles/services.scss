@@ -1,0 +1,112 @@
+.services {
+    position: relative;
+    //border-bottom: $default-border;
+    overflow:hidden;
+    display: flex;
+    text-align: center;
+    
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__section-text {
+        max-width: 600px;
+    }
+    
+    &__items{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: $default-margin;
+        justify-content: space-evenly;
+    }
+
+    @media (min-width: $tablet-width) {
+        $margin-left: 35%;
+
+        &__container {
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: ""; 
+                height: 80%;
+                width: 100%;
+                background-image: url(../images/services_bg.png);
+                background-repeat: no-repeat;
+                background-position: 100% 50%;
+                background-size: auto 100%;
+                z-index: -10;
+                right: 100%- $margin-left - 2%;
+                transform: translateY(-50%);
+                top:50%;
+            }
+        }
+        &__content {
+            min-height: 500px;
+            
+            width: 100% - $margin-left;
+            margin-left: $margin-left;
+            text-align: left;
+            align-items: unset;
+            
+        }
+
+        &__items {
+            justify-content: left;
+            
+            .service-item {
+                width: 50%;
+            }
+        }
+        
+        &__section-text {
+            text-align: left;
+        }
+    
+    }
+}
+
+.service-item {
+
+    display: flex;
+    padding:$default-margin;
+        
+    @include elementColor;
+
+    &__icon {
+        font-size: $font-size--lg2;
+        margin-right: 25px;
+    }
+
+    &__text {
+        padding-left:25px;
+        border-left: $default-border;
+    }
+
+    &__title {
+        font-weight: $font-weight;
+        text-transform: uppercase;
+        color: $main-text-color;
+        margin-bottom: $default-margin;
+    }
+
+    &__description {
+        color: $second-text-color;
+    }
+
+    @media (min-width: $mobile-width) {
+        width: 45%;
+        justify-content: space-between;
+    }
+}

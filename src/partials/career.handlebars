@@ -1,0 +1,18 @@
+<section class = "career">
+    <div class = "container career__container">
+        <div class = "career__content">
+            {{> ./sectionText 
+            sectionName = "career" 
+            title = "Let’s build great things together" 
+            description ="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient. Lorem ipsum dolor stit amet."
+            }}
+
+            <ul class = "career__items">
+                {{> ./careerItem number ="785" text ="projects completed" }} 
+                {{> ./careerItem number ="623" text ="coffees consumed" }} 
+                {{> ./careerItem number ="519" text ="happy customers" }} 
+                {{> ./careerItem number ="246" text ="lines of codes" }} 
+            </ul>
+        </div>
+    </div>
+</section>

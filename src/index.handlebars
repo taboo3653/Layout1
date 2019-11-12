@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Layout</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400&display=fallback" rel="stylesheet">
+
+
+</head>
+
+<body>
+    {{> ./partials/header }}
+    <main>
+        {{> ./partials/slide }} 
+        {{> ./partials/partners }}  
+        {{> ./partials/services }} 
+        {{> ./partials/career }}
+        {{> ./partials/contacts }}
+    </main>
+    {{> ./partials/footer }}
+
+    <div id="root"></div>
+    <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
+    <script>
+            const navigationTabs = document.querySelector(".navigation__main");
+            
+
+            if(navigationTabs)
+            navigationTabs.addEventListener("click", function(event) {
+                event.preventDefault();
+
+                const prevElement =  navigationTabs.querySelector(".active");
+                prevElement.classList.remove("active");
+                event.target.closest('li').classList.add("active");
+
+                const targetBlockName = event.target.closest('a').getAttribute('href');
+                document.querySelector("."+targetBlockName).scrollIntoView({block: "start", behavior: "smooth"});
+            })
+
+
+
+            const sideMenuClass = "navigation__side-menu";
+            const header = document.querySelector("header");
+            const navigationToggle = document.querySelector(".navigation__toggle");
+            const navigationSideMenu = document.querySelector('.'+sideMenuClass);
+
+            if(navigationToggle && navigationSideMenu)
+            navigationToggle.addEventListener("click", function(event) {
+                
+                navigationSideMenu.style.top = header.getBoundingClientRect().bottom+"px";
+
+                const isToggled = navigationToggle.classList.contains("toggled");
+                
+                if(!isToggled) {
+                    document.querySelector(".menu-icon").classList.add("hidden");
+                    document.querySelector(".close-icon").classList.remove("hidden");
+                    navigationToggle.classList.add("toggled");
+                    navigationSideMenu.classList.add(sideMenuClass+"_opened");
+                    document.documentElement.classList.add("no-scroll");
+                    document.body.classList.add("no-scroll");
+
+                }
+                else {
+                    document.querySelector(".menu-icon").classList.remove("hidden");
+                    document.querySelector(".close-icon").classList.add("hidden");
+                    navigationToggle.classList.remove("toggled");
+                    navigationSideMenu.classList.remove(sideMenuClass+"_opened");
+                    document.documentElement.classList.remove("no-scroll");
+                    document.body.classList.remove("no-scroll");
+
+                }
+
+            })
+            
+
+    </script>
+</body>
+</html>

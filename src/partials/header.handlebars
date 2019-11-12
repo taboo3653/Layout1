@@ -1,0 +1,31 @@
+<div class = "top-info">
+    <div class = "top-container">
+        {{> ./socialIcons }}
+        <span class = "phone">
+            <span>Hot Line</span>
+            <a href="tel:+1-303-499-7111">+1 303 499 7111</a>
+        </span>
+    </div>
+</div>
+
+<header class ="header">
+    <div class = "top-container">
+        <div class = "header__logo">
+            <a href="#">
+                <img src="./images/logo.png"/>
+            </a>
+        </div>
+        <nav class ="header__navigation navigation">
+            <div class = "navigation__main">
+                {{> ./navigationItems}}
+            </div>
+            <div class = "navigation__side-menu">
+                {{> ./navigationItems}}
+            </div>
+            <div class ="navigation__toggle">
+                <ion-icon class = "menu-icon" name="menu"></ion-icon>
+                <ion-icon class = "close-icon hidden" name="close"></ion-icon>
+            </div>
+        </nav>
+    </div>
+</header>

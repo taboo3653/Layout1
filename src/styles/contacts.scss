@@ -1,0 +1,105 @@
+.contacts {
+
+    border-bottom: $default-border;
+    text-align: center;
+    position: relative;
+    display: flex;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__section-text {
+        max-width: 600px;
+    }
+
+    &__form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: $default-margin;
+        max-width: 600px;
+        background-color: $main-background-color;
+
+
+        label {
+            text-transform: uppercase;
+            font-weight: $font-weight;
+            color: $main-text-color;
+            font-size: $font-size--xs;
+        }
+        input,textarea {
+
+            &::placeholder{
+                font-weight: $font-weight-light;
+            }
+            
+            font-size: $font-size--xs;
+            width: 100%;
+            border: 0;
+            color: $main-text-color;
+            padding: $default-margin;
+            background-color: $second-background-color;
+            margin-bottom: $default-margin;
+            border-radius: 5px;
+            border: $default-border;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical; 
+        }
+    }
+
+    @media (min-width: $mobile-width) {
+
+        &__container {
+            min-height: 700px;
+        }
+
+        &::before {
+            position: absolute;
+            content: ""; 
+            height: 105%;
+            width: 100%;
+            bottom: -2%;
+            background-image: url(../images/contacts_bg.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto 100%;
+            z-index: -10;
+        }
+
+        &__form {
+            padding: $default-margin*4;
+            border-radius: 10px;
+            box-shadow: 0px 0px $shadow;
+            margin-top: $default-margin*2;
+
+
+            input,textarea {
+
+                &:nth-child(2){
+                    width: 49%;
+                    margin-right: 1%;
+                }
+                &:nth-child(3){
+                    margin-left: 1%;
+                    width: 49%;
+                }
+
+                &::placeholder{
+                    font-weight: $font-weight-light;
+                }
+                
+                margin-bottom: $default-margin*2;
+
+            }
+
+            
+        }
+    }
+}

@@ -1,0 +1,39 @@
+@mixin position-absolute ($top: null, $left: null, $right: null, $bottom: null) {
+	position: absolute;
+	top: $top;
+	left: $left;
+	right: $right;
+	bottom: $bottom;
+}
+
+@mixin img-position($max-width: 200%, $max-height: 200%) {
+	position: relative;
+	overflow: hidden;
+
+	img {
+		@include position-absolute($top: 50%, $left: 50%);
+
+		width: auto;
+		height: auto;
+		min-width: 100%;
+		min-height: 100%;
+		max-width: $max-width;
+		max-height: $max-height;
+		transform: translate(-50%, -50%);
+	}
+}
+
+@mixin elementColor {
+    &:nth-child(n+1) {
+        color:$seagreen;
+    }
+    &:nth-child(n+2)  {
+        color:$yellow;
+    }
+    &:nth-child(n+3)  {
+        color:$blue;
+    }
+    &:nth-child(n+4)  {
+        color:$red;        
+    }
+}

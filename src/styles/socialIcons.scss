@@ -1,0 +1,20 @@
+.social-icons {
+    display: flex;
+    font-size: $font-size--sm;
+
+
+    & > li {
+        
+        margin-right: 24px !important;
+        
+        ion-icon {
+            color: #b5bcc3;
+            float: left;
+            transition: color 0.2s ease;
+            &:hover {
+                color: #6b7c93;
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,116 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: $font-size;
+    font-weight: $font-weight-light;
+    line-height: $line-height;
+}
+
+main {
+    overflow:hidden;
+    position: relative;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+    
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: $font-weight-light;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+	display: block;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.section-text {
+
+    //text-align: center;
+    margin-bottom: $default-margin;
+
+    &__title {
+        margin-bottom: 0.6em;
+        color: $main-text-color;
+        //font-size: $font-size--lg;
+        text-transform: capitalize;
+    }
+
+    &__description {
+        color: $second-text-color;
+    }
+}
+
+.top-container {
+    max-width: $max-width;
+    height: 100%;
+    margin: auto;
+    padding: 0 $default-margin 0 $default-margin;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: $default-margin*3 $default-margin;
+}
+
+
+
+
+.hidden {
+    visibility: hidden;
+}
+
+
+
+.simple-btn {
+    display: inline-block;
+    color: $button-text-color;
+    padding: 15px 30px 15px 30px;
+    box-shadow: 0px 0px 12px 0px rgba(#6c6c6c,0.24);
+    background-color: $white;
+    border-radius: 100px;
+    font-weight: $font-weight;
+    text-transform: capitalize;
+    margin: $default-margin;
+    border: 0;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+    
+    &:hover {
+        box-shadow: 0px 0px 12px 0px rgba(#6c6c6c,0.6);
+    }
+}
+
+
+
+
+html.no-scroll {
+    overflow: hidden;
+}
+body.no-scroll {
+    overflow: visible;
+    height: 100%;
+}

@@ -1,0 +1,131 @@
+.footer {    
+    background-color: $second-background-color;
+    font-size: $font-size--xs;
+
+    a {
+        font-weight: $font-weight;
+    }
+
+    &__inner {
+        display: grid;
+        grid-gap: $default-margin*2;
+
+        grid-template: 
+        
+        "social-icons  social-icons"
+        "categories    community"
+        "info          info"
+        ;
+
+    }
+
+    &__info {
+        grid-area: info;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__logo {
+        margin-bottom: $default-margin;
+        width: 114px;
+        height: 40px;
+    }
+
+    &__links {
+        display: flex;
+        text-transform: uppercase;
+        padding: $default-margin 0;
+        color: $main-text-color;
+
+        a {
+            //width: 50%;
+            padding-right: 45px;
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+
+    &__copyright {
+        color: $second-text-color;
+        padding: $default-margin 0;
+    }
+
+    &__text {
+        color: $second-text-color;
+        padding: $default-margin 0;
+    }
+
+    &__list {
+        //padding : $default-margin 0 ;
+        
+        & > .title {
+            text-transform: uppercase;
+            font-weight: $font-weight;
+            margin-bottom: $default-margin;
+            color: $main-text-color;
+        }
+
+        & > ul {
+            list-style-type: none;
+
+            li {
+                color: $second-text-color;
+                margin: $default-margin 0;
+            }
+        }
+
+        .social-icons {
+            font-size: $font-size--md;
+
+            & > li {
+                margin-top:0;
+                margin-bottom:0;
+            }
+        }
+
+        &_categories {
+            grid-area: categories;
+        }
+
+        &_community {
+            grid-area: community;
+        }
+
+        &_social-icons {
+            grid-area: social-icons;
+        }
+    }
+
+    @media (min-width:$mobile-width)
+    {
+        
+        &__inner {
+            grid-gap: $default-margin*2;
+            grid-template: 
+            "info social-icons social-icons "
+            "info categories    community"
+            / 2fr 1fr 1fr;
+    
+        }
+    }
+
+    @media (min-width:$tablet-width)
+    {
+        
+        &__inner {
+            grid-gap: $default-margin*6;
+
+            grid-template: 
+            "info categories community social-icons"
+            / 2fr 0.5fr 0.5fr 1fr;
+    
+        }
+    }
+}
+
+.footer-container {
+    max-width: $max-width;
+    padding: $default-margin*2 $default-margin;
+    margin: 0 auto;
+}

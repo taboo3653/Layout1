@@ -1,0 +1,111 @@
+.career {
+    $width: 120%;
+    position: relative;
+    text-align: center;
+    width: $width;
+    left: (100%-$width)/2;
+    transform: rotate(-3deg);
+    background-color: $second-background-color;
+    border: $default-border;
+    overflow: hidden;
+    
+    
+    
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        transform: rotate(3deg);
+
+        padding-left: $default-margin;
+        padding-right: $default-margin;
+        width: 100% / $width * 100% ;
+        
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__section-text {
+        max-width: 600px;
+    }
+
+    &__items {
+        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        & > li {
+            width:50%;
+            padding: $default-margin;
+        }
+    }
+
+    @media (min-width: $mobile-width) {
+        &__items {
+            & > li {
+                width:25%;
+            }
+        }
+    }
+
+    @media (min-width: $tablet-width) {
+        text-align: left;
+
+        &__container {
+            position: relative;
+            justify-content: unset;
+            height: 500px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                background-image: url(../images/career_bg.png);
+                background-repeat: no-repeat;
+                background-position: left bottom;
+                background-size: auto 95%;
+                height: 100%;
+                width:100%;
+                left: 70%;
+            }
+        }
+        &__content {
+            align-items: unset;
+            width: 55%;
+            margin-left: 15%;
+
+            
+        }
+        &__items {
+            & > li {
+                width:50%;
+                padding-left: 0;
+            }
+        }
+
+        
+    }
+
+    
+}
+
+.career-item {
+     @include elementColor;
+
+     &__number {
+         font-weight: $font-weight-thin;
+         font-size: $font-size--lg;
+     }
+
+     &__text {
+         color: $main-text-color;
+         text-transform: uppercase;
+     }
+} 

@@ -1,0 +1,24 @@
+.top-info {
+    height: 40px;
+    background-color: rgba($main-background-color, 0.94);
+    width:100%;
+    border-bottom: 1px solid $top-border-color;
+    display: none;
+
+    .phone {
+        font-size: $font-size--xxs;
+        
+        & > *:first-child {
+            color: $main-text-color;
+        }
+
+        & > *:last-child {
+            margin-left: $font-size--xs;
+            color: $second-text-color;
+        }
+    }
+    
+    @media (min-width: $mobile-width--sm) {
+		display: block;
+	}
+}
