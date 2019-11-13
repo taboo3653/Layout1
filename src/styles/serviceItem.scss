@@ -1,0 +1,33 @@
+.service-item {
+
+    display: flex;
+    padding:$default-margin;
+        
+    @include elementColor;
+
+    &__icon {
+        font-size: $font-size--lg2;
+        margin-right: 25px;
+    }
+
+    &__text {
+        padding-left:25px;
+        border-left: $default-border;
+    }
+
+    &__title {
+        font-weight: $font-weight;
+        text-transform: uppercase;
+        color: $main-text-color;
+        margin-bottom: $default-margin;
+    }
+
+    &__description {
+        color: $second-text-color;
+    }
+
+    @media (min-width: $mobile-width) {
+        width: 45%;
+        justify-content: space-between;
+    }
+}

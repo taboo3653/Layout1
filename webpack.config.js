@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin}  = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 
 module.exports = {
     entry: './src/index.js',
@@ -15,7 +17,7 @@ module.exports = {
         compress: true,
         port: 3000,
         watchContentBase: true,
-        progress: true
+        //progress: true
       },
     module: {
         rules: [
@@ -24,7 +26,7 @@ module.exports = {
                 exclude: /node_modules/,
                 use: "babel-loader"
             },
-            { test: /\.handlebars$/, loader: "handlebars-loader" },
+            
             {
                 test: /\.(sc|sa|c)ss$/,
                 use: [
@@ -59,7 +61,8 @@ module.exports = {
                         name: '[name].[ext]',
                         outputPath: 'images/'
                       }
-                    }
+                    },
+                    
                   ]
             },
             {
@@ -73,7 +76,16 @@ module.exports = {
                     }
                   }
                 ]
-            }
+            },
+            { 
+              test: /\.handlebars$/, 
+              use: [
+                {
+                  loader: 'handlebars-loader'
+                }
+              ]
+            },
+            
         ]
     },
     plugins: [
@@ -88,10 +100,18 @@ module.exports = {
           chunkFilename: '[id].css',
           ignoreOrder: false,
         }),
+        new CopyWebpackPlugin([
+          {from: './src/images', to: './images'}
+        ]),
         new HtmlWebpackPlugin({
           template: "./src/index.handlebars",
           minify: {
-            collapseWhitespace: true
+            collapseWhitespace: true,
+            removeScriptTypeAttributes: true,
+            removeComments: true,
+            removeScriptTypeAttributes: true,
+            useShortDoctype: true,
+            removeRedundantAttributes: true,
             },
         }),
         

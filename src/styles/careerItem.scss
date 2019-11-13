@@ -1,0 +1,13 @@
+.career-item {
+    @include elementColor;
+
+    &__number {
+        font-weight: $font-weight-thin;
+        font-size: $font-size--lg;
+    }
+
+    &__text {
+        color: $main-text-color;
+        text-transform: uppercase;
+    }
+} 

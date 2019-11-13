@@ -45,13 +45,11 @@ ul {
 
 .section-text {
 
-    //text-align: center;
     margin-bottom: $default-margin;
 
     &__title {
         margin-bottom: 0.6em;
         color: $main-text-color;
-        //font-size: $font-size--lg;
         text-transform: capitalize;
     }
 
@@ -76,14 +74,9 @@ ul {
     padding: $default-margin*3 $default-margin;
 }
 
-
-
-
 .hidden {
     visibility: hidden;
 }
-
-
 
 .simple-btn {
     display: inline-block;
@@ -103,9 +96,6 @@ ul {
         box-shadow: 0px 0px 12px 0px rgba(#6c6c6c,0.6);
     }
 }
-
-
-
 
 html.no-scroll {
     overflow: hidden;

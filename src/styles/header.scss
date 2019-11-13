@@ -1,3 +1,5 @@
+@import './navigationItems.scss';
+
 .header {
     $header-height: 70px;
     position: sticky;
@@ -116,12 +118,5 @@
         }
     }
 
-    .navigation-items {
-        text-transform: uppercase;
-        font-weight: $font-weight;
-        color: $main-text-color;
-        height: 100%;
-        letter-spacing: 2px;
-        font-size: $font-size--xxs;
-    }
+    
 }

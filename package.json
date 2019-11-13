@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://taboo3653.github.io/Layout1/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Nikita Agafonov",
   "license": "ISC",
@@ -15,10 +18,13 @@
     "@babel/preset-env": "^7.6.3",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.5",
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",
+    "gh-pages": "^2.1.1",
     "handlebars": "^4.5.1",
     "handlebars-loader": "^1.7.1",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
@@ -28,7 +34,5 @@
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.9.0"
   },
-  "dependencies": {
-    "scrollnav": "^3.0.2"
-  }
+  "dependencies": {}
 }
