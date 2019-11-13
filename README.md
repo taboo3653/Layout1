@@ -1,7 +1,7 @@
 # Layout #1
 Adaptive design (mobile-first approach)
 
-## Используемые технологии
+## Used technologies
 - HTML
 - SASS
 - Native JS
